@@ -1,0 +1,20 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      xmlns:tools="http://schemas.android.com/tools"
+      tools:context="com.ricky.materialdesign.slidingmenu.drawerlayout.MainActivity">
+
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@mipmap/ic_delete"
+        android:orderInCategory="100"
+        android:title="删除"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_add"
+        android:icon="@mipmap/ic_add"
+        android:orderInCategory="100"
+        android:title="增加"
+        app:showAsAction="always"/>
+
+</menu>
