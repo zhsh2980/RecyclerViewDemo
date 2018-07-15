@@ -20,6 +20,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
+    private RecyclerView mRecyclerViewIn;
     private MyRecyclerViewAdapter mAdapter;
     private List<String> list;
 
@@ -28,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //first init
+
         list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             list.add("item" + i);
@@ -35,9 +38,13 @@ public class MainActivity extends AppCompatActivity {
 
         //通过findViewById拿到RecyclerView实例
         mRecyclerView = findViewById(R.id.recyclerView);
+        mRecyclerViewIn = findViewById(R.id.recyclerView_in);
         //设置RecyclerView管理器
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         mRecyclerView.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.VERTICAL));
+
+        mRecyclerViewIn.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
+        mRecyclerViewIn.addItemDecoration(new DividerItemDecoration(this, LinearLayoutManager.HORIZONTAL));
 
         //初始化适配器
         mAdapter = new MyRecyclerViewAdapter(list);
@@ -57,6 +64,10 @@ public class MainActivity extends AppCompatActivity {
         mRecyclerView.setItemAnimator(new DefaultItemAnimator());
         //设置适配器
         mRecyclerView.setAdapter(mAdapter);
+        //设置添加或删除item时的动画，这里使用默认动画
+        mRecyclerViewIn.setItemAnimator(new DefaultItemAnimator());
+        //设置适配器
+        mRecyclerViewIn.setAdapter(mAdapter);
     }
 
 
