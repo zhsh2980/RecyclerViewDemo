@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //first init
+        //第二次提交
 
         list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
